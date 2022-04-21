@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script>
+	var anoAtual=2022;
+	var chegadaPortugueses=1500;
+	var quantidadeGeracoes=(anoAtual-chegadaPortugueses)/28;
+
+	
+	function pularLinha(pular){
+		document.write("<hr><br>"); // tag <hr> quebra a tela, no caso, fazendo uma linha horizontal
+	}
+	function cabecalho(texto){
+		document.write("<h1>"+texto+"</h1>")
+	}
+	function titulo(subtexto){
+		document.write("<h3>"+subtexto+"</h3>")
+		pularLinha();
+	}
+	function mostra(resultado){
+		document.write(resultado);
+	}
+
+	cabecalho("Quantas gerações será que o Brasil já teve desde a chegada dos portugueses?")
+	titulo("Vamos descobrir!")
+	mostra("Houveram "+Math.round(quantidadeGeracoes)+" gerações desde a chegada deles")
+
+</script>

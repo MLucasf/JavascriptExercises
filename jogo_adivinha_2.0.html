@@ -1,0 +1,74 @@
+<meta charset="utf-8">
+<input/>
+<button>Teste</button>
+<script>
+	function showText(text){
+		document.write(text);
+		document.write("<br><br>");
+	}
+
+	var tentativas=0;
+
+	function start(){
+		//var tentativas=0; se a variável estiver dentro da função, ela reseta toda vez que a função for chamada
+		if(tentativas<3){
+			var acertou=false;
+
+			for(var posicao=0;posicao<randomNum.length;posicao++){
+
+				if(input.value==randomNum[posicao]){
+					acertou=true;
+					alert("Você acertou");
+					break;
+				}				
+			}
+			
+			if(acertou==false){
+				alert("Você errou");
+				tentativas++;
+			}	
+			
+		}else{
+			alert("Você perdeu o jogo");
+		}
+	}
+
+	function geradorNumeros(){
+		return Math.round(Math.random()*10);
+	}
+
+	function sorteioNumeros(quantidadeNum){
+		var sorteio=[]; //array principal
+		var numerosEnviados=0; //quantidade de números efetivamente enviados para dentro do array
+		while(numerosEnviados<quantidadeNum){
+			var numArray=false; //se o números já está no array
+			var numeros=geradorNumeros(); //numeros = função que gera números
+			
+				if (numeros!=0){ //saber se um número é diferente de 0
+					for(var posicao=0;posicao<sorteio.length;posicao++){ //checar todos os números dentro do array
+						if(numeros==sorteio[posicao]){ //se o numero gerado for igual ao número dentro do array na posição "posicao"
+							numArray=true; //numArray será true
+							break; //quebra o ciclo
+						}
+					}	
+					if (numArray==false){ //se numArray for false (não estiver dentro de sorteio em nenhuma posição)
+						sorteio.push(numeros); //o array recebe o valor dentro dos parênteses
+						numerosEnviados++; //quantidade de números aumenta em um
+							
+					}
+				}
+		}
+		return sorteio;
+	}
+
+	var randomNum=sorteioNumeros(5);
+	console.log(randomNum);
+
+	var input=document.querySelector("input"); // chama o input
+
+	
+	var button=document.querySelector("button"); //chama o botão
+	button.onclick=start; //o clique no botão inicia o código da função start
+
+
+</script>

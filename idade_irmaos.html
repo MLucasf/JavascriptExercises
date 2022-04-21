@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script>
+	var idadeEu=25
+	var idadeEle=15
+	var diferenca=idadeEu-idadeEle
+
+	function pularLinha(pular){
+		document.write("<br>");
+	}
+	function titulo(titulo){
+		document.write("<h1>"+titulo+"</h1>");
+		pularLinha();
+	}
+	function texto(texto) {
+		document.write(texto);
+	}
+	titulo("Diferença de idade entre eu e meu irmão");
+	texto("A diferença de idade entre eu, que tenho "+idadeEu+" e ele, que tem "+idadeEle+", é "+diferenca+" anos");
+</script>

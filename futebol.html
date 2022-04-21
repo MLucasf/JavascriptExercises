@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<script>
+	function pularLinha(){
+		document.write("<br><br>");
+	}
+	function mostrar(texto){
+		document.write(texto);
+		pularLinha();
+	}
+
+	var vitorias=parseInt(prompt("Número de vitórias: "));
+	var empates=parseInt(prompt("Número de empates: ")); // parseInt transforça o valor recebido em int
+
+	var pontos=vitorias*3+empates;
+
+	/*var vitorias=prompt("Vitorias");
+	var empates=prompt("Empates");
+
+	var pontos=parseInt(vitorias*3+empates) // não funciona*/
+
+	var pontosAnterior=28;
+
+	mostrar("Os pontos do seu time é: "+pontos);
+
+	if (pontos>pontosAnterior){
+		mostrar("O seu time está melhor que no ano anterior!");
+	}if (pontos==pontosAnterior){
+		mostrar("Seu time está igual ao ano anterior.");
+	}if (pontos<pontosAnterior){
+		mostrar("Seu time está pior do que o ano passado :(")
+	}
+
+
+
+</script>

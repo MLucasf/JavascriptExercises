@@ -1,0 +1,89 @@
+<meta charset="utf-8">
+<input/> 
+<button>Compare os números</button>
+
+<script>
+	
+	
+	//var randomNum=Math.round(Math.random()*10);
+
+	/*var randomNum=[];
+	randomNum.push(5);
+	randomNum.push(7);
+	randomNum.push(10);
+	randomNum.push(2); formas de adicionar valores ao array*/
+
+	function sorteio(){
+		return Math.round(Math.random()*10);
+	}
+
+	function sorteioNum(quantidade){
+
+		var numbers=[];
+
+		var num=0;
+
+		while(num < quantidade){
+
+			var numAleatorio=sorteio();
+			var numDentro=false;
+
+			if(numAleatorio!=0){
+				for(var posicao=0; posicao<numbers.length; posicao++){
+					if(numAleatorio==numbers[posicao]){ // descobrir se o número já tá dentro do array
+						numDentro=true;
+						break;
+					}
+				}
+				if(numDentro==false){
+					numbers.push(numAleatorio);
+					num++;
+				}
+
+			}	
+		}
+
+		return numbers;
+	}
+	
+	var randomNum=sorteioNum(5);
+
+	console.log(randomNum);
+
+	var input = document.querySelector("input"); // o javascript irá buscar a tag ("x") e atribuir à variável;
+
+	input.focus(); // a caixa do input entra em foco assim que a página é carregada
+
+	function verifica(){
+
+		var achou= false;
+
+		for(var posicao=0; posicao<randomNum.length; posicao++){
+
+			console.log(posicao)
+
+			if (input.value == randomNum[posicao]){
+
+				achou=true;
+
+				alert("Você acertou");
+
+				break;
+			}
+		}
+
+		if(achou==false){
+			alert("Você errou");
+		}
+		console.log(achou)
+		input.value=""; //o valor da caixa de input é resetado e fica vazia
+		input.focus(); //faz a caixa de input ter foco após a caixa de alerta o if-else
+		
+	}
+
+	var button = document.querySelector("button");
+	button.onclick=verifica; // onclick = no clique
+	//função com parênteses = executa a função
+	// função sem parênteses = acessa o código dentro da função
+
+</script>

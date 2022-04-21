@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+	function pularLinha(){
+		document.write("<br><br>");
+	}
+	function mostrarTexto(texto){
+		document.write(texto);
+		pularLinha();
+
+	}
+	var anoCopa=1930;
+	var anoEscolhido=prompt("Até que ano será feita a análise?");
+	var count=0;
+	while(anoCopa<=anoEscolhido){
+		mostrarTexto("Teve copa em "+anoCopa);
+
+		anoCopa+=4;
+		count+=1;
+	}
+	count-=2
+	mostrarTexto("De 1930 até "+anoEscolhido+" tiveram "+count+" copas do mundo.")
+
+</script>

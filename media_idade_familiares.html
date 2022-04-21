@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script>
+	function mostrar(texto){
+		document.write(texto);
+		document.write("<br><br>");
+	}
+	var qntFamiliar=parseInt(prompt("Quantas idades você irá colocar?"));
+
+	var count=0;
+	var totalIdades=0;
+
+	while(count<qntFamiliar){
+		var idade=parseInt(prompt("Digite uma idade:"));
+		totalIdades+=idade;
+		count++;
+	}
+
+	var mediaIdades=totalIdades/qntFamiliar;
+
+	mostrar("A media de idade considerando essas idades é "+mediaIdades);
+</script>
+

@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script>
+	function pularLinha(){
+		document.write("<br><br>");
+	}
+	function mostra(texto){
+		document.write(texto);
+		pularLinha();
+	}
+	/*function calcularIMC(peso,altura){
+		var imc=peso/((altura/100)**2); // transforma a altura em metros
+		return imc; // retorna o valor de imc e o deixa disponível
+		//return pode ser um valor fixo. Ex.: "return 10;"
+		
+	}*/
+
+	/*var imc1=calcularIMC(80,173); // altura em centímetros
+	var imc2=calcularIMC(58,168); // por causa do return, que deixou os valores disponíveis, será possível atribuir o valor da função à variável
+
+	mostra("O valor do meu imc é "+imc1+" e o valor do seu é "+imc2);
+	pularLinha();
+	mostra("A soma dos imc's é "+(imc1+imc2));*/
+
+	var peso=prompt("Qual é o seu peso?");
+	var altura=prompt("Qual é a sua altura, em centímetros?");
+	var imc=peso/((altura/100)**2);
+	mostra("O seu IMC é "+imc);
+
+
+	if(imc<18.5){
+		mostra("Seu IMC está baixo, você é magrelo demais")
+
+	}
+	if(imc>35){
+		mostra("Seu IMC está alto, você está obeso")
+
+	}
+	if(18.5<=imc && imc<=35){
+		mostra("Seu IMC está bom!")
+	}
+
+</script> 
